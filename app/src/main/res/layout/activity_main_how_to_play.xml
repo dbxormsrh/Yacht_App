@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="플레이 방법!"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="1. 주사위를 5개 굴립니다."
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="2. 원하는 주사위를 골라 다시 굴릴 수 있습니다."
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="(주사위는 한 라운드에 총 3번, 다시 던지는 것은 2번 가능합니다.)"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="3.나온 결과를 족보와 비교하여 점수판에 기록합니다. "
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="(주사위는 한 라운드에 총 3번, 다시 던지는 것은 2번 가능합니다.)"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="4. 각 플레이어가 12턴을 플레이 하면 게임 끝!"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="5. 점수 높은 플레이어가 승리!"
+            android:textSize="15dp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp">
+
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="이름"/>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="170dp"
+                    android:text="설명"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Example"
+                    android:textSize="15dp" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="Aces"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="1이 나온 주사위 눈의 총합"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="Deuces"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="2이 나온 주사위 눈의 총합"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="Threes"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="3이 나온 주사위 눈의 총합"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="Fours"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="4이 나온 주사위 눈의 총합"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="Fives"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="5이 나온 주사위 눈의 총합"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="Sixes"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="6이 나온 주사위 눈의 총합"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginLeft="5dp">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:text="보너스"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="270dp"
+                    android:text="상단 항목의 점수 합계가 63점 이상일 때, 추가로 35점을 얻는다"
+                    android:textSize="12dp" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp">
+
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="Choices"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="주사위 눈 5개의 총합 최대 30점"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="4of a Kind"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="동일한 주사위 눈이 4개일 때, 주사위 눈 5개의 총합 최대 30점"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="Full House"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="동일한 주사위 눈이 각각 3개, 2개일 때, 주사위 눈 5개의 총합 최대 30점"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="S.Straight"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="이어지는 주사위 눈이 4개 이상일 때 고정 15점"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="L.Straight"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="이어지는 주사위 눈이 5개일 때 고정 30점"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="80dp"
+                    android:text="Yacht"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="170dp"
+                    android:text="동일한 주사위 눈이 5개일 때 고정 50점"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""/>
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right"
+            android:text="Go Home"
+            android:onClick="back4Home"
+            android:id="@+id/goHome"/>
+
+    </LinearLayout>
+</ScrollView>

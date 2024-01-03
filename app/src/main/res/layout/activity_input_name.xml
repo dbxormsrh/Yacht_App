@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:textSize="15dp"
+        android:gravity="center_horizontal"
+        android:text="두 플레이어의 이름을 입력해주세요" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+
+                <ImageView
+                    android:id="@+id/player1_Img"
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/player1" />
+            </TableRow>
+
+            <TableRow>
+
+                <EditText
+                    android:id="@+id/player1_Name1"
+                    android:layout_width="100dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="1p"
+                    android:text="" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+
+                <ImageView
+                    android:id="@+id/player2_Img"
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/player2" />
+            </TableRow>
+
+            <TableRow>
+
+                <EditText
+                    android:id="@+id/player2_Name1"
+                    android:layout_width="100dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="2p"
+                    android:text="" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/playgame_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="playGame"
+        android:text="play!" />
+
+</LinearLayout>

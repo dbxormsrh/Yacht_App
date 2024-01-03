@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/velvet">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- 주사위 보여주기-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dice_case_2"/>
+            <!-- dice -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="8dp"
+                android:paddingRight="5dp">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/dice1_result"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/dice2_result"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/dice3_result"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/dice4_result"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/dice5_result"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!--ScoreBoard-->
+        <TableRow
+            android:gravity="center">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp">
+
+                <!--turn + categories + 점수-->
+                <TableRow>
+
+                    <TableLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:text="Turn"
+                            android:textSize="15dp"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:text="0 / 12"
+                            android:textSize="20dp"
+                            android:id="@+id/turn2"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:background="#0F0F0F"
+                            android:text=" Categories"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15dp" />
+                    </TableLayout>
+
+                    <ImageView
+                        android:id="@+id/player1_Img_score_board"
+                        android:layout_width="80dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/player1"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/player2_Img_score_board"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/player2"
+                        android:layout_weight="1" />
+
+                </TableRow>
+
+                <!--Aces-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:text=" Aces"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15dp"/>
+
+                    <TextView
+                        android:id="@+id/player1_Aces"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player1_Aces_score"
+                        android:background="@drawable/shadow"
+                        android:textColor="#FFFFFF"/>
+
+                    <TextView
+                        android:id="@+id/player2_Aces"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player2_Aces_score"
+                        android:textColor="#FFFFFF" />
+                </TableRow>
+
+                <!--Dueces-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+
+                    <TextView
+                        android:text=" Deuces"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_Deuces"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player1_Deuces_score"
+                        android:background="@drawable/shadow"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_Deuces"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player2_Deuces_score" />
+                </TableRow>
+
+                <!--Threes-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:text=" Threes"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_Threes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player1_Threes_score"
+                        android:background="@drawable/shadow"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_Threes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player2_Threes_score" />
+                </TableRow>
+
+                <!--Fours-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:text=" Fours"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_Fours"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="player1_Fours_score"
+                        android:textAlignment="center"
+                        android:background="@drawable/shadow"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_Fours"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player2_Fours_score" />
+                </TableRow>
+
+                <!--Fives-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:text=" Fives"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_Fives"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player1_Fives_score"
+                        android:background="@drawable/shadow"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_Fives"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player2_Fives_score" />
+                </TableRow>
+
+                <!--Sixes-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+
+                    <TextView
+                        android:text=" Sixes"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_Sixes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player1_Sixes_score"
+                        android:background="@drawable/shadow"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_Sixes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player2_Sixes_score" />
+                </TableRow>
+
+                <!--subtotal-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:text=" subtotal"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+
+                    <TextView
+                        android:id="@+id/player1_Subtotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text=" 0/63"
+                        android:textAlignment="textEnd"
+                        android:textSize="15dp"
+                        android:background="@drawable/shadow"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/player2_Subtotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text=" 0/63"
+                        android:textAlignment="textEnd"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+                </TableRow>
+
+                <!--+35 Bonus-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:text=" +35 Bonus"
+                        android:textSize="20dp"
+                        android:textColor="#FFFFFF" />
+
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_Plus35"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:background="@drawable/shadow"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_Plus35"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:textSize="20dp" />
+                </TableRow>
+
+            </TableLayout>
+        </TableRow>
+
+        <!--sub info-->
+        <TableRow
+            android:gravity="center">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shadow"
+                    android:text=" Bonus if Aces ~ Sixes are over 63 points"
+                    android:textColor="#FFFFFF" />
+            </TableLayout>
+        </TableRow>
+
+        <!--Choices-->
+        <TableRow
+            android:gravity="center">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:text=" Choices"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_Choices"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player1_Choices_score"
+                        android:background="@drawable/shadow"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_Choices"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player2_Choices_score" />
+                </TableRow>
+            </TableLayout>
+        </TableRow>
+
+        <!--4ofkind ~ Yacht-->
+        <TableRow
+            android:gravity="center">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <!--4 of a kind-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:text=" 4 of a kind"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_4ofakind"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player1_4ofakind_score"
+                        android:background="@drawable/shadow" />
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_4ofakind"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player2_4ofakind_score" />
+                </TableRow>
+
+                <!--Full House-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:text=" Full house"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_Fullhouse"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player1_Fullhouse_score"
+                        android:background="@drawable/shadow"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_Fullhouse"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player2_Fullhouse_score" />
+                </TableRow>
+
+                <!--S.Straight-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:text=" S.Straight"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_SStraight"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player1_SStraight_score"
+                        android:background="@drawable/shadow"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_SStraight"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="player2_SStraight_score" />
+                </TableRow>
+
+                <!--L.Straight-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:text=" L.Straight"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_LStraight"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player1_LStraight_score"
+                        android:background="@drawable/shadow"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_LStraight"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player2_LStraight_score" />
+                </TableRow>
+
+                <!--Yacht-->
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:text=" Yacht"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_Yacht"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player1_Yacht_score"
+                        android:background="@drawable/shadow" />
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_Yacht"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:onClick="player2_Yacht_score" />
+                </TableRow>
+            </TableLayout>
+        </TableRow>
+
+        <!--Total-->
+        <TableRow
+            android:gravity="center">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <TableRow
+                    android:background="@drawable/shadow">
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:text=" Total"
+                        android:textSize="15dp"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player1_Total"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/shadow"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/player2_Total"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:layout_weight="1"/>
+                </TableRow>
+            </TableLayout>
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+
+            <Button
+                android:id="@+id/finish_seeing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:onClick="back_to_rolling1"
+                android:text="다시 돌아가기"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/back_to_rolling_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:onClick="back_to_rolling2"
+                android:text="다음 플레이어!"
+                android:textSize="10dp" />
+        </LinearLayout>
+    </TableLayout>
+
+
+
+</ScrollView>
